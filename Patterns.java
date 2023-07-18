@@ -6,11 +6,16 @@ public class Patterns {
 
         System.out.println("Enter the number of rows: ");
         int rows = scanner.nextInt();
-        int count=0;
-        for (int i = 0; i < rows; ++i) {
-            for (int j = 0; j <= i; ++j) {
-                count++;
-                System.out.print(count + " ");
+        for (int i = 1; i <= rows; ++i) {
+            for (int j = rows - i + 1; j > 0; --j) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= rows; j++) {
+                if (j == 1 || j == rows || i == 1 || i == rows) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
