@@ -4,26 +4,15 @@ public class Patterns {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the number of rows: ");
-        int rows = scanner.nextInt();
-        for (int i = 1; i <= rows; ++i) {
-            for (int j = rows - i; j > 0; --j) {
-                System.out.print(" ");
-            }
-            for (int j = 1; j <= 2 * i - 1; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        System.out.println("Enter the value of n : ");
+        int n = scanner.nextInt();
+        int arr[] = new int[5];
+        for (int i = 0; i < n; ++i) {
+            arr[i] = scanner.nextInt();
         }
-
-        for (int i = rows - 1; i >= 1; --i) {
-            for (int j = 0; j < rows - i; ++j) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < 2 * i - 1; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
+        System.out.println("You Entered : ");
+        for (int i = 0; i < n; ++i) {
+            System.out.println("a[" + i + "]= " + arr[i]);
         }
         scanner.close();
     }
