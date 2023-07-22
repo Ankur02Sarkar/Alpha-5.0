@@ -1,3 +1,5 @@
+package Sorting;
+
 import java.util.Arrays;
 
 // Can sometimes give time complexity nearly equal to O(n)
