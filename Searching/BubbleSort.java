@@ -1,3 +1,5 @@
+/* 
+
 import java.util.Arrays;
 
 public class BubbleSort {
@@ -20,7 +22,50 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int num[] = { 1,2,3,4,5,6,7 };
+        int num[] = { 7,6,5,4,3,2,1 };
+        System.out.println(Arrays.toString(bubblesort(num)));
+    }
+}
+
+*/
+
+// Optimized Bubble Sort
+import java.util.Arrays;
+
+public class BubbleSort {
+    public static int[] bubblesort(int num[]) {
+        boolean swapped;
+
+        // Outer loop for each pass
+        for (int i = 0; i < num.length - 1; i++) {
+
+            // Reset swapped flag for each pass
+            swapped = false;
+
+            // Inner loop for swapping pairs
+            for (int j = 0; j < num.length - 1 - i; j++) {
+                if (num[j] > num[j + 1]) {
+                    // Swap elements
+                    int temp = num[j];
+                    num[j] = num[j + 1];
+                    num[j + 1] = temp;
+
+                    // Set swapped flag to true
+                    swapped = true;
+                }
+            }
+
+            // If no two elements were swapped in the inner loop, the array is sorted.
+            if (!swapped) {
+                break;
+            }
+        }
+
+        return num;
+    }
+
+    public static void main(String[] args) {
+        int num[] = { 1,2,3,7,6,5,4 };
         System.out.println(Arrays.toString(bubblesort(num)));
     }
 }
